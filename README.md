@@ -2,7 +2,7 @@
 Repository for Getting and Cleaning Data course offered by John Hopkins University (Coursera) as part of Data Science specialization program.
 
 # Course Project
-The goal of the course project is to collect, work with, and clean data collected from the accelerometers from the Samsung Galaxy S smartphone.
+The goal of the course project is to collect, work with, and clean data collected from the accelerometers from the Samsung Galaxy SII smartphone.
 The data for the project are available in the following link: https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zp
 Descriptions of the data files can be found in README.txt file.
 
