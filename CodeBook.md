@@ -14,6 +14,7 @@ activity.name
 * Description: Identifies the activity done by the subject during the original experiment.
 * Data Type: character.
 * Values: 
+
 ** WALKING
 ** WALKING_UPSTAIRS
 ** WALKING_DOWNSTAIRS
