@@ -22,11 +22,11 @@ train_data <- as.data.frame(train_data);
 all_data <- merge(test_data, train_data, all=TRUE);
 v_names <- as.vector(names(all_data));
 
-logical_mean <- grepl("mean", names(all_data));
+logical_mean <- grepl("mean\\.", names(all_data));
 mean_cols <- v_names[logical_mean];
 mean_data <- all_data[mean_cols];
 
-logical_std <- grepl("std", names(all_data));
+logical_std <- grepl("std\\.", names(all_data));
 std_cols <- v_names[logical_std];
 std_data <- all_data[std_cols];
 
@@ -43,10 +43,18 @@ filtered_data <- rename(filtered_data, c(subject_data = "Subject.ID", activity_d
 
 old_names <- as.vector(colnames(filtered_data));
 new_names <- tolower(gsub("\\.\\.", "", old_names));
+new_names <- sub("^f", "frequency.", new_names);
+new_names <- sub("^t", "time.", new_names);
+new_names <- sub("x$", "x.axis", new_names);
+new_names <- sub("y$", "y.axis", new_names);
+new_names <- sub("z$", "z.axis", new_names);
+new_names <- sub("gyro", "gyroscope", new_names);
+new_names <- sub("acc", "accelerometer", new_names);
+new_names <- sub("mag", "magnitude", new_names);
+new_names <- sub("bodybody", "body", new_names);
 names(filtered_data) <- new_names;
 
 dt <- data.table(filtered_data);
-dt2 <- dt[, lapply(.SD,mean), by=subject.id,activity.name];
+dt2 <- dt[, lapply(.SD,mean), by=list(subject.id,activity.name)];
 
 write.table(dt2, file="./avg_tidy_data.txt", row.name=FALSE);
-
