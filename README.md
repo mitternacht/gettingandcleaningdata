@@ -10,7 +10,7 @@ Descriptions of the data files can be found in README.txt file.
 The run_analysis.R script do the following operations:
 * Merges the training and the test sets to create one data set.
 * Extracts only the measurements on the mean and standard deviation for each measurement. 
-* Uses descriptive activity names to name the activities in the data set
+* Renames activities data with their corresponding names.
 * Appropriately labels the data set with descriptive variable names. 
 * From the data set in previous step, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
 * Exports the independent tidy data set created in previous step to a text file named "avg_tidy_data.txt" located in the main directory of your working directory.
