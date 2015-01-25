@@ -11,7 +11,18 @@ The run_analysis.R script do the following operations:
 * Merges the training and the test sets to create one data set.
 * Extracts only the measurements on the mean and standard deviation for each measurement. 
 * Renames activities data with their corresponding names.
-* Appropriately labels the data set with descriptive variable names. 
+* Labels the data set with descriptive variable names, lowering case and replacing old name's pieces according to the following pattern:
+
+ * ^f --> frequency.;
+ * ^t --> time.;
+ * x$ --> x.axis;
+ * y$ --> y.axis;
+ * z$ --> z.axis;
+ * gyro --> gyroscope;
+ * acc --> accelerometer;
+ * mag --> magnitude;
+ * bodybody --> body.
+ 
 * From the data set in previous step, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
 * Exports the independent tidy data set created in previous step to a text file named "avg_tidy_data.txt" located in the main directory of your working directory.
 
